@@ -6,7 +6,8 @@ import path from 'path';
 const app = express();
 
 app.use(cors({
-    origin: "http://localhost:5173",
+    // origin: "http://localhost:5173",
+    origin:"blog-app-znpr.vercel.app",
     credentials: true
 }));
 
