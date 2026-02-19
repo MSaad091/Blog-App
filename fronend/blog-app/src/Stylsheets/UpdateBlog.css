@@ -1,0 +1,49 @@
+.update-blog-container {
+  max-width: 600px;
+  margin: 50px auto;
+  background: #f4f6fb;
+  padding: 30px 25px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.update-blog-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #222;
+}
+
+.update-blog-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.update-blog-container input[type="text"],
+.update-blog-container input[type="file"] {
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+.update-blog-container input[type="file"] {
+  cursor: pointer;
+}
+
+.update-blog-container button {
+  padding: 12px 20px;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 15px;
+  transition: 0.3s;
+}
+
+.update-blog-container button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.2);
+}

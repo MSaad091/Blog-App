@@ -1,0 +1,20 @@
+.button {
+    padding: 4px 10px;
+    background-color: #e63946;
+    color: white;
+    font-size: 12px;
+    font-weight: 500;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+
+    /* Make it inline with comment */
+    display: inline-block;
+    margin-left: 10px; /* space between comment text and button */
+}
+
+.button:hover {
+    background-color: #d62828;
+}
