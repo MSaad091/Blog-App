@@ -3,7 +3,8 @@ import axios from 'axios';
 
 
 const api = axios.create({
-    baseURL:"http://localhost:8000/user",
+    // baseURL:"http://localhost:8000/user",
+    baseURL:"https://blog-app-1-2r5z.onrender.com/user",
     withCredentials:true
 });
 
