@@ -4,10 +4,8 @@ import cors from 'cors';
 import UserRouter from './routes/route.js';
 import path from 'path';
 const app = express();
-
 app.use(cors({
-    // origin: "http://localhost:5173",
-    origin:"blog-app-znpr.vercel.app",
+    origin: "https://blog-app-znpr.vercel.app", // ✅ no space, include https://
     credentials: true
 }));
 
