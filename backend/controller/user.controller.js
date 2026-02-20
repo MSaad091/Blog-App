@@ -101,12 +101,12 @@ const LoginUser = async (req, res) => {
     const LoggedInUser = await User.findById(user._id).select("-password");
 
     // Set cookie
-    const options = {
-      httpOnly: true,
-      secure: false, // local dev ke liye false, production me true
-      sameSite: "strict",
-      maxAge: 7 * 24 * 60 * 60 * 1000, // 7 din
-    };
+   const options = {
+  httpOnly: true,
+  secure: true,           // HTTPS me mandatory
+  sameSite: "none",       // cross-origin requests allow karne ke liye
+  maxAge: 7 * 24 * 60 * 60 * 1000, // 7 din
+};
 
     // Send response
     return res
