@@ -4,9 +4,25 @@ import cors from 'cors';
 import UserRouter from './routes/route.js';
 import path from 'path';
 const app = express();
+// app.use(cors({
+//     origin: "https://blog-app-znpr.vercel.app", // ✅ no space, include https://
+//     credentials: true
+// }));
+const allowedOrigins = [
+  "http://localhost:5173",
+  "https://blog-app-znpr.vercel.app"
+
+];
+
 app.use(cors({
-    origin: "https://blog-app-znpr.vercel.app", // ✅ no space, include https://
-    credentials: true
+  origin: function(origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS"));
+    }
+  },
+  credentials: true
 }));
 
 app.use(express.json());
