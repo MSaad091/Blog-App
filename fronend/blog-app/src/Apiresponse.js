@@ -1,18 +1,25 @@
 import axios from 'axios';
-const token = localStorage.getItem("token");
+// const token = localStorage.getItem("token");
+// // const api = axios.create({
+// //     // baseURL:"http://localhost:8000/user",
+// //     baseURL:"https://blog-app-1-2r5z.onrender.com/user",
+// //     withCredentials:true
+// // });
 // const api = axios.create({
-//     // baseURL:"http://localhost:8000/user",
-//     baseURL:"https://blog-app-1-2r5z.onrender.com/user",
-//     withCredentials:true
+//   baseURL: "https://blog-app-1-2r5z.onrender.com/user",
+//   withCredentials: true,
+//   headers: {
+//     Authorization: `Bearer ${token}` // ✅ fallback in case cookie fails
+//   }
 // });
+const token = localStorage.getItem("token");
+if (!token) console.error("Token missing in localStorage");
+
 const api = axios.create({
   baseURL: "https://blog-app-1-2r5z.onrender.com/user",
   withCredentials: true,
-  headers: {
-    Authorization: `Bearer ${token}` // ✅ fallback in case cookie fails
-  }
+  headers: token ? { Authorization: `Bearer ${token}` } : {}
 });
-
 
 export const RegisterUser = (formdata) => api.post('/register',formdata);
 export const LoginUser = (formdata) => api.post('/login',formdata)
