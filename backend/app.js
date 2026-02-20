@@ -8,10 +8,25 @@ const app = express();
 //     origin: "https://blog-app-znpr.vercel.app", // ✅ no space, include https://
 //     credentials: true
 // }));
+// const allowedOrigins = [
+//   "http://localhost:5173",
+//   "https://blog-app-znpr.vercel.app"
+  
+// ];
+
+// app.use(cors({
+//   origin: function(origin, callback) {
+//     if (!origin || allowedOrigins.includes(origin)) {
+//       callback(null, true);
+//     } else {
+//       callback(new Error("Not allowed by CORS"));
+//     }
+//   },
+//   credentials: true
+// }));
 const allowedOrigins = [
   "http://localhost:5173",
   "https://blog-app-znpr.vercel.app"
-
 ];
 
 app.use(cors({
@@ -24,7 +39,6 @@ app.use(cors({
   },
   credentials: true
 }));
-
 app.use(express.json());
 app.use(express.urlencoded({ extended: true, limit: "16kb" }));
 app.use(cookieParser());
