@@ -66,7 +66,11 @@ function Login() {
             console.log("Login Response:", response); // ✅ Check the actual structure
 
             if (response.success) {
-                localStorage.setItem("token", response.token);
+                // localStorage.setItem("token", response.token);
+                  localStorage.setItem("token", response.data.accessToken);
+
+    // User ID safely
+    localStorage.setItem("userId", response.data.user._id);
 
                 // ✅ Safe access for userId
                 if (response.user) {

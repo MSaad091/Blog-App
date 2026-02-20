@@ -1,11 +1,16 @@
 import axios from 'axios';
-
-
-
+const token = localStorage.getItem("token");
+// const api = axios.create({
+//     // baseURL:"http://localhost:8000/user",
+//     baseURL:"https://blog-app-1-2r5z.onrender.com/user",
+//     withCredentials:true
+// });
 const api = axios.create({
-    // baseURL:"http://localhost:8000/user",
-    baseURL:"https://blog-app-1-2r5z.onrender.com/user",
-    withCredentials:true
+  baseURL: "https://blog-app-1-2r5z.onrender.com/user",
+  withCredentials: true,
+  headers: {
+    Authorization: `Bearer ${token}` // ✅ fallback in case cookie fails
+  }
 });
 
 
