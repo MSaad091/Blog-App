@@ -52,12 +52,17 @@ function Blogall() {
                   userId={userId}
                 />
 
-                <button 
+             {
+              item.user === userId &&(
+                   <button 
                   className="update-btn"
                   onClick={() => navigate(`/updateblog/${item._id}`)}
+                  userId={userId}
                 >
                   ✏ Update
                 </button>
+              )
+             }
               </div>
 
               <div className="comments-wrapper">
