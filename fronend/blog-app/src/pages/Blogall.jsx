@@ -9,6 +9,8 @@ function Blogall() {
   const [blog, setAllBlog] = useState([]);
   const navigate = useNavigate();
   const userId = localStorage.getItem("userId");
+ 
+console.log("Logged user:", userId);
 
   const getAllBlog = async () => {
     try {
@@ -34,6 +36,7 @@ function Blogall() {
   <button className='home-btn' onClick={handlechange}>Home</button>
       {blog.length > 0 ? (
         blog.map((item) => (
+           console.log("Blog user:", item.user),
           <div className="blog-card" key={item._id}>
             
             {item.image && (
@@ -63,14 +66,16 @@ function Blogall() {
                 </button>
               )
              } */}
-             {item.user?.toString() === userId && (
-  <button
+             {
+              (item.user?._id || item.user)?.toString() === userId &&(
+                <button
     className="update-btn"
     onClick={() => navigate(`/updateblog/${item._id}`)}
   >
     ✏ Update
   </button>
-)}
+              )
+             }
               </div>
 
               <div className="comments-wrapper">
