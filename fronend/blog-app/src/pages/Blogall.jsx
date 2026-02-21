@@ -54,9 +54,9 @@ console.log("Logged user:", userId);
                   isLiked={item.likes?.includes(userId)}
                   userId={userId}
                 />
-{/* 
+
              {
-              item.user?._id === userId &&(
+              item.author?._id === userId &&(
                    <button 
                   className="update-btn"
                   onClick={() => navigate(`/updateblog/${item._id}`)}
@@ -65,17 +65,17 @@ console.log("Logged user:", userId);
                   ✏ Update
                 </button>
               )
-             } */}
-             {
-              (item.user?._id || item.user)?.toString() === userId &&(
-                <button
+             }
+             
+              
+                {/* <button
     className="update-btn"
     onClick={() => navigate(`/updateblog/${item._id}`)}
   >
     ✏ Update
-  </button>
-              )
-             }
+  </button> */}
+              
+             
               </div>
 
               <div className="comments-wrapper">
