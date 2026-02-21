@@ -51,9 +51,9 @@ function Blogall() {
                   isLiked={item.likes?.includes(userId)}
                   userId={userId}
                 />
-
+{/* 
              {
-              item.user === userId &&(
+              item.user?._id === userId &&(
                    <button 
                   className="update-btn"
                   onClick={() => navigate(`/updateblog/${item._id}`)}
@@ -62,7 +62,15 @@ function Blogall() {
                   ✏ Update
                 </button>
               )
-             }
+             } */}
+             {item.user?.toString() === userId && (
+  <button
+    className="update-btn"
+    onClick={() => navigate(`/updateblog/${item._id}`)}
+  >
+    ✏ Update
+  </button>
+)}
               </div>
 
               <div className="comments-wrapper">
