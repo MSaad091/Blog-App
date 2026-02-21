@@ -68,7 +68,7 @@ function Login() {
             if (response.success) {
                 // localStorage.setItem("token", response.token);
                   localStorage.setItem("token", response.data.accessToken);
-                  localStorage.setItem("userId", response.data.data.user._id)
+                  localStorage.setItem("userId", response.data.user._id)
 
     // User ID safely
     localStorage.setItem("userId", response.data.user._id);
